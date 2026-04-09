@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 11:01:06 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/09 11:53:58 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/09 13:38:08 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ class Fixed
 {	
 	public:
 		Fixed();
-		Fixed(int);
 		Fixed(const Fixed &fixed);
 		~Fixed();
 		Fixed	&operator=(const Fixed &rhs);
