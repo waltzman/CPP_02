@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 11:46:53 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/09 13:30:34 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/09 13:35:51 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int main(void)
 	std::cout << a.getRawBits() << std::endl;
 	std::cout << b.getRawBits() << std::endl;
 	std::cout << c.getRawBits() << std::endl;
-	c.setRawBits(42);
-	std::cout << c.getRawBits() << std::endl;
+	
 	return (0);
 }
