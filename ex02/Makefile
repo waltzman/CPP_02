@@ -1,10 +1,8 @@
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = brainzzz
+TARGET = fixed
 SRCS = 	main.cpp\
-		Zombie.cpp\
-		newZombie.cpp\
-		randomChump.cpp\
+		Fixed.cpp\
 
 OBJS = $(SRCS:.cpp=.o)
 
