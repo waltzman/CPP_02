@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 13:47:05 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/09 15:59:53 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/13 13:24:20 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,18 @@ Fixed::~Fixed(void)
 	std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(const Fixed& fixed)
+Fixed::Fixed(const Fixed& copy)
 {
-	// otra forma:
-	*this = fixed.fractional_bits;
+	
+	this->setRawBits(copy.getRawBits());
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Fixed& Fixed::operator=(const Fixed& fixed)
+Fixed& Fixed::operator=(const Fixed& copy)
 {
-	if (this != &fixed) {
+	if (this != &copy) {
 		std::cout << "Copy assignment operator called" << std::endl;
-		this->fixed_point = fixed.fixed_point;
+		this->setRawBits(copy.getRawBits());
 	}
 	return (*this);
 }
@@ -75,4 +75,8 @@ int Fixed::getRawBits() const
 	std::cout << "getRawBits member function called" << std::endl;
 	return (fixed_point);
 }
-
+void Fixed::setRawBits(int const raw)
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	fixed_point = raw;
+}
