@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 13:47:05 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/13 13:24:20 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/13 13:28:44 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {	
-	return (this->fixed_point >> this->fractional_bits);
+	return ((int) this->fixed_point >> this->fractional_bits);
 }
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
