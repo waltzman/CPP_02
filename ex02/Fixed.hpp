@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 16:09:04 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 12:33:26 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/15 13:28:52 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Fixed
 	public:
 		Fixed(void);
 		Fixed(const int);
-		Fixed(float fl);
+		Fixed(const float fl);
 		~Fixed();
 
 		Fixed(const Fixed &fixed);
@@ -53,8 +53,8 @@ class Fixed
 		static const Fixed	&min(const Fixed &l, const Fixed &r);
 		static Fixed		&max(Fixed &l, Fixed &r);
 		static const Fixed	&max(const Fixed &l, const Fixed &r);	
-};
+	};
 
-std::ostream &operator<<(std::ostream &out, const Fixed &fxd);
+	std::ostream &operator<<(std::ostream &out, const Fixed &fxd);
 	
 #endif

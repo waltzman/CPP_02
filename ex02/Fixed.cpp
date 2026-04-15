@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:32:53 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 12:34:28 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/15 13:26:05 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ Fixed::Fixed(const int i)
 	this->fixed_point = i * (1 << fractional_bits);
 }
 
-Fixed::Fixed(const float f)
+Fixed::Fixed(const float fl)
 {
-	//std::cout << "Float constructor called" << std::endl;
+	std::cout << "Float constructor called" << std::endl;
 	this->fixed_point = (int)roundf(f*(1<<fractional_bits)); 
 }
 
@@ -55,17 +55,17 @@ Fixed& Fixed::operator=(const Fixed& copy)
 
 float Fixed::toFloat(void) const
 {
-	return (float)this->fixed_point/(1 << fractional_bits);
+	return  ((float( this->fixed_point) / float (1 << fractional_bits)));
 }
 
 int Fixed::toInt(void) const
 {	
-	return ((int) this->fixed_point >> fractional_bits);
+	return (this->fixed_point >> fractional_bits);
 }
 
-std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
+std::ostream& operator<<(std::ostream& out, const Fixed& fxd)
 {
-	out << fixed.toFloat();
+	out << fxd.toFloat();
 	return (out);
 }
 
