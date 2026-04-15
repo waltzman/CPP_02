@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:32:53 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 13:26:05 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/15 13:32:18 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ Fixed::Fixed(const int i)
 
 Fixed::Fixed(const float fl)
 {
-	std::cout << "Float constructor called" << std::endl;
-	this->fixed_point = (int)roundf(f*(1<<fractional_bits)); 
+	//std::cout << "Float constructor called" << std::endl;
+	this->fixed_point = (int)roundf(fl*(1<<fractional_bits)); 
 }
 
 Fixed::~Fixed(void)
