@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 16:09:04 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/13 14:02:03 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/15 12:33:26 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ class Fixed
 		static const int	fraction_bits;
 	public:
 		Fixed(void);
-		Fixed(cosnt int);
-		Fixed(float float);
-		~Fixef();
+		Fixed(const int);
+		Fixed(float fl);
+		~Fixed();
 
 		Fixed(const Fixed &fixed);
 
@@ -54,5 +54,7 @@ class Fixed
 		static Fixed		&max(Fixed &l, Fixed &r);
 		static const Fixed	&max(const Fixed &l, const Fixed &r);	
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fxd);
 	
 #endif
