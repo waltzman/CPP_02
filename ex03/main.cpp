@@ -6,12 +6,12 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:56:41 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 14:07:27 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/15 14:40:23 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsp.cpp"
-#include <iostream>
+#include "Point.hpp"
+#include "bsp.hpp"
 
 int main(void)
 {

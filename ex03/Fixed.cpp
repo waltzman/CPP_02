@@ -6,13 +6,11 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:32:53 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 13:48:42 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/15 14:27:05 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
-#include <iostream>
 
 static const int fractional_bits = 8;
 

@@ -1,6 +1,6 @@
 CPP = c++
 CPP_FLAGS = -Wall -Wextra -Werror -std=c++98
-TARGET = fixed
+TARGET = bsp
 SRCS = 	main.cpp\
 		bsp.cpp\
 		Point.cpp\
