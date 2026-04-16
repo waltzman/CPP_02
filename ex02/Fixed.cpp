@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/13 13:32:53 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 13:32:18 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/16 12:20:45 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,36 +18,36 @@ static const int fractional_bits = 8;
 
 Fixed::Fixed(void) : fixed_point(0)
 {
-	//std::cout << "Default constructor called" << std::endl;
+	std::cout << "Default constructor called" << std::endl;
 }
 
 Fixed::Fixed(const int i)
 {
-	//std::cout << "Int constructor called" << std::endl;
-	this->fixed_point = i * (1 << fractional_bits);
+	std::cout << "Int constructor called" << std::endl;
+	this->setRawBits(i * (1 << fractional_bits));
 }
 
 Fixed::Fixed(const float fl)
 {
-	//std::cout << "Float constructor called" << std::endl;
-	this->fixed_point = (int)roundf(fl*(1<<fractional_bits)); 
+	std::cout << "Float constructor called" << std::endl;
+	this->setRawBits((int)roundf(fl*(1<<fractional_bits)));
 }
 
 Fixed::~Fixed(void)
 {
-	//std::cout << "Destructor called" << std::endl;
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& copy)
 {
 	this->fixed_point = copy.getRawBits();
-	//std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Copy constructor called" << std::endl;
 }
 
 Fixed& Fixed::operator=(const Fixed& copy)
 {
 	if (this != &copy) {
-		//std::cout << "Copy assignment operator called" << std::endl;
+		std::cout << "Copy assignment operator called" << std::endl;
 		this->fixed_point = copy.getRawBits();
 	}
 	return (*this);
@@ -168,22 +168,34 @@ Fixed Fixed::operator--(int)
 	return (temp);
 }
 
-Fixed	&Fixed::min(Fixed &l, Fixed &r)
+Fixed	&Fixed::min(Fixed &first, Fixed &second)
 {
-	return (l < r ? l : r );
+	if (first.toFloat() <= second.toFloat())
+		return (first);
+	else
+		return (second);
 }
 
-const Fixed	&Fixed::min(const Fixed &l, const Fixed &r)
+const Fixed	&Fixed::min(const Fixed &first, const Fixed &second)
 {
-	return (l < r ? l : r );
+	if (first.toFloat() <= second.toFloat())
+		return (first);
+	else
+		return (second);
 }
 
-Fixed	&Fixed::max(Fixed &l, Fixed &r)
+Fixed	&Fixed::max(Fixed &first, Fixed &second)
 {
-	return (l > r ? l : r );
+	if (first.toFloat() >= second.toFloat())
+		return (first);
+	else
+		return (second);
 }
 
-const Fixed	&Fixed::max(const Fixed &l, const Fixed &r)
+const Fixed	&Fixed::max(const Fixed &first, const Fixed &second)
 {
-	return (l > r ? l : r );
+	if (first.toFloat() >= second.toFloat())
+		return (first);
+	else
+		return (second);
 }
