@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 13:41:25 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/15 14:08:00 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/16 13:26:44 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 Fixed	cross_pr(const Point init, const Point end, const Point point)
 {
-	Fixed a(end.getY() - init.getY());
-	Fixed b(end.getX() - init.getX());
-	Fixed c(end.getX()*init.getY() - end.getY()*init.getX());
-	return (a*point.getX() - b*point.getY()  + c);
+	Fixed a((end.getX() - init.getX()) * (point.getY() - init.getY()));
+	Fixed b((end.getY() - init.getY()) * (point.getX() - init.getX()));
+	return (a-b);
+
 }
 
 bool bsp(Point const a, Point const b, Point const c, Point const point)
