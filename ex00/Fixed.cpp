@@ -6,7 +6,7 @@
 /*   By: rlobun <rlobun@student.42madrid.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/09 11:22:47 by rlobun            #+#    #+#             */
-/*   Updated: 2026/04/09 13:28:17 by rlobun           ###   ########.fr       */
+/*   Updated: 2026/04/16 11:57:06 by rlobun           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,10 @@
 
 const int Fixed::fractional_bits = 8;
 
-Fixed::Fixed() : fixed_point(0)
+Fixed::Fixed()
 {
+	fixed_point = 0;
 	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::Fixed(int val) : fixed_point(val)
-{
-	std::cout << "Constructor with parameter called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
@@ -44,7 +40,7 @@ Fixed& Fixed::operator=(const Fixed& fixed)
 }
 
 int Fixed::getRawBits() const {
-	std::cout << "getRawBits memeber function called" << std::endl;
+	std::cout << "getRawBits member function called" << std::endl;
 	return fixed_point;
 }
 
